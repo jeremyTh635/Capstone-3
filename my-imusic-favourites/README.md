@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# About my-i-music-favourites app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site was developed as the final project in Hyperion.Dev’s web development bootcamp. The following are the instructions for using the app and information regarding how to download and install it.
 
-## Available Scripts
+## Using the app
 
-In the project directory, you can run:
+This is a basic fullstack web app, the aim of which is to use the iTunes API to create a list of favourite albums. There are three pages:
 
-### `npm start`
+- A home page containing a login form
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- A search page where the user can search for albums by artist
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A favourites page which displays the user's choices from the search results
 
-### `npm test`
+Before being able to search the API, the user has to login. This can be done so by clicking on the 'Go to Login' button on the Home page. This will bring up a modal with a form where the user can enter a username and a password. On clicking 'Submit', the user will then be able to create searches and obtain results. As things stand at the moment, users need to enter one of the two username/password combinations in the simulated database file named userDB.js. These are as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Username: "user12" Password: "uvw456"
 
-### `npm run build`
+- Username: "user34" Password: "xyz789"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Doing so will create a json web token (JWT) which protects the Search route from unauthorized users.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Search page contains a text input for name of an artist, group etc., and a dropdown select field for different media types. It is recommended to select 'Album'. Clicking 'Search' will load a list of albums with their cover artwork, artist name, album name and release date. There is also a button next to each list item, 'Make Favourite' which adds the chosen album to the Favourites list. This can be viewed by going to the Favourites page via the top menu. The user will be able to see their chosen favourites and delete them from the list by clicking the 'Remove' button next to each one.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+N.B. Leaving the Search page will clear the form and the results so viewing Favourites and returning to Search will necessitate a new search.
 
-### `npm run eject`
+## Viewing the code and installing the app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The code which I wrote to develop the app can be found in my GitHub repo [here](https://github.com/jeremyTh635/Capstone-3.git). It can be downloaded by selecting the ‘Download zip’ option from dropdown under the green ‘Code’ button at the top of the page.
