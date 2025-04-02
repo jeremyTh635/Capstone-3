@@ -1,7 +1,8 @@
+// Necessary imports for functionality of Home component
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// Bootstrap imports to style component
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,19 +10,19 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
+// Declare function for Home component
 function Home() {
+  // State constants for modal login form
   const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
-
-
+// Show/Hide modal login form
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
 
-
+// Send login credentials and add token to local storage
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +34,7 @@ function Home() {
         localStorage.setItem("token", response.data.token)
         console.log(response.status, response.data);
       })
-      navigate("/search");
+      // Error handling if login unsuccessful
     } catch (error) {
       console.log(error);
     }
@@ -56,6 +57,7 @@ function Home() {
           </Col>
           <Col></Col>
         </Row>
+        {/* Form to login user */}
       </Container>
       <Modal show={show} style={{color: "black"}} onHide={handleClose}>
         <Modal.Header>

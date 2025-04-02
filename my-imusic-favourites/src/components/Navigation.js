@@ -1,3 +1,4 @@
+// Imports for navbar functionality and Bootstrap styling
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -7,6 +8,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 function Navigation() {
+  // Tooltip to warn user they must login before using search
   const warning = (props) => (
     <Tooltip id="search-tooltip" {...props}>
       You must be logged in to search
@@ -21,6 +23,7 @@ function Navigation() {
             <Nav.Link as={Link} to="/">
               HOME
             </Nav.Link>
+            {/* Display tooltip when hovering over Search link */}
             <OverlayTrigger
               placement="right"
               delay={{show: 250, hide: 400}}

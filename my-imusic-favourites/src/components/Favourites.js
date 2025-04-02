@@ -1,11 +1,14 @@
+// Necessary imports for Favourites component
 import React from "react";
 import Button from "react-bootstrap/Button";
 
+// Declare function with passed props
 function Favourites({ favourites, setFavourites }) {
   return (
     <div>
       <h1>My Favourites</h1>
       <ul className="resultsList">
+        {/* Conditionally render favourites array in browser */}
         {favourites.length > 0 ? (
           favourites.map((album) => (
             <li key={album.collectionId}>
@@ -18,6 +21,7 @@ function Favourites({ favourites, setFavourites }) {
                 className="addRemove"
                 variant="dark"
                 size="sm"
+                // Remove item from favourites list
                 onClick={() => {
                   setFavourites(
                     favourites.filter(

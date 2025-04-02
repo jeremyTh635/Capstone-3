@@ -1,3 +1,4 @@
+// User credentials to login to the app
 const validUsers = [
   {
     id: 1,
