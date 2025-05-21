@@ -12,7 +12,7 @@ import Button from "react-bootstrap/Button";
 // Declare function with passed props
 function Search({ favourites, setFavourites, navigate }) {
   // State variables for searching and receiving data
-  const [term, setTerm] = useState("");
+  const [musicArtist, setMusicArtist] = useState("");
   const [entity, setEntity] = useState("album");
 
   // Array to contain search results
@@ -30,7 +30,7 @@ function Search({ favourites, setFavourites, navigate }) {
     try {
       console.log(localStorage.getItem("token"))
       const response = await axios.get(`http://localhost:8000/search`, {
-        params: { term, entity },
+        params: { musicArtist, entity },
         // Use token to protect search route from unauthorized users
         headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
       });
@@ -57,8 +57,8 @@ function Search({ favourites, setFavourites, navigate }) {
               <Form.Control
                 ref={inputRef}
                 type="text"
-                value={term}
-                onChange={(e) => setTerm(e.target.value)}
+                value={musicArtist}
+                onChange={(e) => setMusicArtist(e.target.value)}
               />
               {/* Select for type of media */}
               <Form.Select
